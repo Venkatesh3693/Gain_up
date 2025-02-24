@@ -414,7 +414,7 @@ body {
         gap: 10px;
     }
     .product-card {
-        width: 80%; 
+        width: 100%; /* Adjusted width to fit 2 cards per row */
     }
     .logo1 {
         display: none;

@@ -420,7 +420,7 @@ body {
     .product-section {
         margin-left: 50px;
         width: 90%;
-        height: 600px;
+        height: 700px;
         overflow-y: auto;
         z-index: 1;
         display: grid;

@@ -9,19 +9,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-light align-items-center bg-light px-3 d-flex">
-        <div class="profile d-flex w-75 gap-3 align-items-center ml-auto">
-            <h1 class="navbar-brand ml-6">Buyers Portal</h1>
-            <span class="ml-3 position-relative">
+    <nav class="navbar navbar-light bg-light px-3 d-flex justify-content-between align-items-center">
+        <!-- Left Section: Brand Name -->
+        <div class="brand-section">
+            <h1 class="navbar-brand">Buyers Portal</h1>
+        </div>
+    
+        <!-- Center Section: Notification, Settings, and Profile Image -->
+        <div class="icon-section d-flex gap-3 align-items-center">
+            <span class="position-relative notification">
                 <i class="bi bi-bell-fill"></i>
                 <span class="badge">1</span>
             </span>
-            <span><i class="bi bi-gear-fill"></i></span>
-            <img class="img1 ml-3" src="img/Profile1.webp" alt="">
+            <span class="settings"><i class="bi bi-gear-fill"></i></span>
+            <img class="profile-img" src="img/Profile1.webp" alt="User Profile">
         </div>
-        <div class="User d-flex flex-column ml-auto w-0">
-            <h6 class="text-center">User Profile</h6>
-            <p class="mb-1 text-center">Kratos</p>
+    
+        <!-- Right Section: User Profile Details -->
+        <div class="user-section d-flex flex-column text-center">
+            <h6>User Profile</h6>
+            <p class="mb-1">Kratos</p>
         </div>
     </nav>
     <div class="main-content1">

@@ -3,24 +3,42 @@ body {
     flex-direction: column;
     height: 100vh;
 }
+
 .navbar {
     background-color: #ffffff;
-    padding: 10px;
+    padding: 10px 20px;
     display: flex;
-    justify-content: center;
-    
+    justify-content: space-between; /* Separates items */
+    align-items: center;
     z-index: 1; 
     position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-}
-.navbar .brand-name {
-    font-size: 24px;
-    margin: 0 auto;
-    padding-left: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.position-relative {
+/* Left Section: Brand */
+.brand-section {
+    flex-grow: 1;  /* Allows it to take space */
+    margin-left: 600px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Center Section: Icons & Profile */
+.icon-section {
+    display: flex;
+    gap: 15px;
+    margin-left: 400px;
+}
+
+/* Notification Icon */
+.notification {
     position: relative;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .badge {
@@ -44,22 +62,29 @@ body {
     border-style: solid;
 }
 
-.navbar div span {
-    color: navy;
+/* Settings Icon */
+.settings {
     font-size: 24px;
     cursor: pointer;
-    gap: 10px;
 }
-.navbar div img {
-    width: 45px; 
-    height: auto; 
-    cursor: pointer; 
-    border-radius: 100%;
+
+/* Profile Image */
+.profile-img {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 50%;
+    object-fit: cover;
 }
-.navbar .navbar-brand {
-    margin-left: 30px;
-    font-size: 24px;
-    margin: 0 auto;
+
+/* Right Section: User Profile */
+.user-section {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 100px;
 }
 
 .main-content1 {
@@ -67,12 +92,14 @@ body {
     flex-grow: 1;
     background-color: #ffffff;
 }
+
 .main-content2 {
     display: flex;
     flex-grow: 1;
     background: #f4f3f3;
     overflow: hidden; 
 }
+
 .sidebar {
     width: 60px;
     transition: width 0.3s;
@@ -84,33 +111,45 @@ body {
     z-index: 2; 
     background-color: #f8f9fa; 
 }
+
 .sidebar.expanded {
     width: 200px;
 }
+
 .sidebar ul {
     list-style: none;
     padding: 10px;
     margin-top: 20px;
 }
+
 .sidebar ul li {
     padding: 10px;
     display: flex;
     align-items: center;
+    transition: background-color 0.3s ease;
 }
+
+.sidebar ul li:hover {
+    background-color: #f0f0f0; 
+    border-radius: 5px; 
+    padding: 5px; 
+}
+
 .sidebar ul li span {
     display: none;
     margin-left: 10px;
     cursor: pointer;
-    
 }
+
 .sidebar.expanded ul li span {
     display: inline;
 }
+
 .sidebar i {
-    
     color: navy; 
     font-size: 18px;
 }
+
 .category-filter {
     width: 350px;
     padding: 20px;
@@ -120,13 +159,16 @@ body {
     border-radius: 10px;
     height: 30vh;
 }
+
 .category-filter h5 {
     margin-bottom: 10px;
 }
+
 .category-filter label {
     display: block;
     margin: 5px 0;
 }
+
 .product-section {
     flex-grow: 1;
     padding: 20px;
@@ -138,17 +180,20 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+
 .product-card {
     width: 200px; 
     margin: 10px;
     height: auto;
     cursor: pointer; 
 }
+
 .card-body {
     text-align: center;
     padding: 0;
     height: auto;
 }
+
 .card-body h5 {
     margin-top: 0;
     background-color: #dfdfdf;
@@ -158,6 +203,7 @@ body {
     height: 30px;
     padding: 0;
 }
+
 .card-body p {
     margin-top: 0;
     background-color: #eeeeee;
@@ -168,6 +214,7 @@ body {
     font-size: 14px;
     height: auto;
 }
+
 .logo1 {
     margin-top: 18px;
     margin-left: 5px;
@@ -175,6 +222,7 @@ body {
     height: auto; 
     cursor: pointer; 
 }
+
 .logo2 {
     margin-top: 18px;
     margin-left: 5px;
@@ -293,27 +341,43 @@ body {
         display: block;
     }
 
-    .navbar .brand-name {
-        font-size: 16px; 
+    .brand-section {
+        margin-left: 160px;
     }
 
-    .navbar div span {
-        font-size: 16px; 
+    .icon-section {
+        margin-left: 40px;
+        gap: 5px;
     }
 
-    .navbar div img {
-        width: 30px; 
-    }
-
-    .navbar div h6 p {
-        font-size: 16px; 
+    .user-section {
+        margin-right: 0;
         
+        font-size: 10px;
+    }
+
+    .user-section H6{
+        font-size: 12px;
+    }
+    
+
+    .navbar-brand {
+        font-size: 18px;
+    }
+
+    .notification, .settings {
+        font-size: 16px; /* Reduced icon size */
+    }
+
+    .profile-img {
+        width: 30px; /* Reduced profile image size */
+        height: 30px; /* Reduced profile image size */
     }
 
     .badge {
-        width: 12px; 
-        height: 12px; 
-        font-size: 6px; 
+        width: 10px; /* Reduced badge size */
+        height: 10px; /* Reduced badge size */
+        font-size: 5px; /* Reduced font size for badge */
     }
 
     .read-more-btn {

@@ -386,7 +386,7 @@ body {
 
 @media (max-width: 400px) {
     .sidebar {
-        width: 40px;
+        width: 50px;
     }
 
     .main-content2 {

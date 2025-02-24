@@ -1,17 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
-document.querySelectorAll(".btn-category").forEach(function (button) {
-        button.addEventListener("click", function () {
-            let selectedCategory = this.getAttribute("data-category");
-
+    document.querySelectorAll(".btn-category").forEach(function (checkbox) {
+        checkbox.addEventListener("change", function () {
+            let selectedCategories = Array.from(document.querySelectorAll(".btn-category:checked")).map(cb => cb.getAttribute("data-category"));
 
             document.querySelectorAll(".product-card").forEach(function (card) {
                 card.style.display = "none";
             });
 
-            if (selectedCategory === "Shirt") {
-                document.querySelectorAll(".product-card#formal").forEach(card => card.style.display = "block");
-            } else if (selectedCategory === "T-Shirts") {
-                document.querySelectorAll(".product-card#t-shirt").forEach(card => card.style.display = "block");
+            if (selectedCategories.length === 0) {
+                
+                document.querySelectorAll(".product-card").forEach(card => card.style.display = "block");
+            } else {
+                selectedCategories.forEach(function (category) {
+                    if (category === "Shirt") {
+                        document.querySelectorAll(".product-card#formal").forEach(card => card.style.display = "block");
+                    } else if (category === "T-Shirts") {
+                        document.querySelectorAll(".product-card#t-shirt").forEach(card => card.style.display = "block");
+                    }
+                    
+                });
             }
         });
     });
@@ -60,8 +67,8 @@ document.querySelectorAll(".btn-category").forEach(function (button) {
         }, 30); 
     }
 
-document.getElementById("sidebar").addEventListener("click", toggleSidebar);
-document.getElementById("sidebar").addEventListener("mouseleave", function () {
+    document.getElementById("sidebar").addEventListener("click", toggleSidebar);
+    document.getElementById("sidebar").addEventListener("mouseleave", function () {
         let sidebar = document.getElementById("sidebar");
         let logo1 = document.querySelector(".logo1");
         let logo2 = document.querySelector(".logo2");
@@ -70,5 +77,17 @@ document.getElementById("sidebar").addEventListener("mouseleave", function () {
         fastFadeOut(logo2, function () {
             fastFadeIn(logo1);
         });
+    });
+
+    
+    function toggleCategoryFilter() {
+        const filter = document.querySelector('.category-filter1');
+        filter.style.display = filter.style.display === 'none' || filter.style.display === '' ? 'block' : 'none';
+    }
+
+    
+    document.querySelector('.filter-btn').addEventListener('click', toggleCategoryFilter);
+    document.querySelector('.category-filter1').addEventListener('mouseleave', function () {
+        this.style.display = 'none';
     });
 });

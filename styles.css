@@ -32,6 +32,7 @@ body {
     display: flex;
     gap: 15px;
     margin-left: 400px;
+    color: navy;
 }
 
 /* Notification Icon */
@@ -132,7 +133,6 @@ body {
 .sidebar ul li:hover {
     background-color: #f0f0f0; 
     border-radius: 5px; 
-    padding: 5px; 
 }
 
 .sidebar ul li span {
@@ -462,6 +462,9 @@ body {
 
     .read-more-btn {
         display: none;
+    }
+    .sidebar ul li span {
+        font-size: 10px;
     }
 }
 
